@@ -1,9 +1,18 @@
-import react from "react";
-import App from "./App";
-import "./App.css";
+import React from "react";
+// import App from "./App";
 
-function Tags(props) {
-  return <div class="tag">#{props.tags}</div>;
+export default class Tags extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="tags">
+        {this.props.tags.map((i) => {
+          return <div className="tag">#{i}</div>;
+        })}
+      </div>
+    );
+  }
 }
-
-export default Tags;
